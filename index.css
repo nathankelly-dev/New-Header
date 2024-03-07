@@ -14,8 +14,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -40,4 +38,49 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+/*********** Actual CSS *************/
+h1 {
+    font-size: 3rem;
+    line-height: 3.4rem;
+}
+
+h2 {
+    font-size: 2.3rem;
+    line-height: 2.8rem;
+}
+
+p {
+    font-size: 1.125rem;
+    line-height: 1.4rem;
+}
+section {
+    padding: 4rem;
+    position: relative;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section:first-of-type {
+    min-height: 70vh;
+}
+
+.section__inner {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.white {
+    color: white;
+}
+
+.bg-grey {
+    background-color: #3C3C3C;
+}
+
+.bg-blue {
+    background-color: #00279d;
 }
