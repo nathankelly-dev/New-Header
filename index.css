@@ -58,7 +58,6 @@ p {
 section {
     padding: 4rem;
     position: relative;
-    display: block;
     display: flex;
     justify-content: center;
     align-items: center;
