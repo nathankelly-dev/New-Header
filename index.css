@@ -81,6 +81,6 @@ section:first-of-type {
     background-color: #3C3C3C;
 }
 
-.bg-blue {
-    background-color: #00279d;
+.bg-teal {
+    background-color: teal;
 }
