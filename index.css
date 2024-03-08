@@ -16,7 +16,7 @@ time, mark, audio, video {
 	border: 0;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -39,8 +39,20 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+button {
+    -webkit-appearance: none;
+    border-radius: 0;
+    text-align: inherit;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    color: inherit;
+    font: inherit;
+  }
 
-/*********** Actual CSS *************/
+/*********** Template CSS *************/
 h1 {
     font-size: 3rem;
     line-height: 3.4rem;
@@ -55,6 +67,11 @@ p {
     font-size: 1.125rem;
     line-height: 1.4rem;
 }
+
+header {
+    box-sizing: border-box;
+}
+
 section {
     padding: 4rem;
     position: relative;
@@ -62,6 +79,7 @@ section {
     justify-content: center;
     align-items: center;
     min-height: 500px;
+    box-sizing: border-box;
 }
 
 section:first-of-type {
@@ -83,4 +101,81 @@ section:first-of-type {
 
 .bg-teal {
     background-color: teal;
+}
+
+header .logo .dark-blue {
+    fill: #1566A3;
+}
+
+header .logo .light-blue {
+    fill: #4498CD;
+}
+
+header .logo .navy-blue,
+header .logo.homepage-logo-title {
+    fill: #23324F;
+}
+
+/*********** Header CSS *************/
+header {
+    height: 70px;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.header--transparent {
+    background: transparent;
+    margin-bottom: -70px;
+    z-index: 1;
+    position: relative;
+}
+
+header.header--transparent .logo svg,
+header.header--transparent .logo svg *,
+header.header--transparent .header__controls svg,
+header.header--transparent .header__quick-nav a {
+    fill: white !important;
+    transition: all 0.3s ease-in-out;
+    color: white !important;
+}
+
+header .logo {
+    display: flex;
+    gap: 0.5rem
+}
+
+header .logo svg.homepage-logo {
+    width: 53px;
+}
+
+header .logo svg.homepage-logo-title {
+    display: block !important;
+    width: 100px;
+}
+
+header .header__controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+header .header__controls button {
+    width: 30px;
+}
+
+header .header__quick-nav {
+    margin-right: 1rem;
+}
+
+header .header__quick-nav a {
+    margin-right: 0.5rem;
+    text-decoration: none;
+    color: black;
+}
+
+header .header__quick-nav a:last-of-type {
+    margin-right: unset;
 }
