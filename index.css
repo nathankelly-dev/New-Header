@@ -124,13 +124,39 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition-delay: 0.5s;
+}
+
+header#header--fixed {
+    position: relative;
+}
+
+header.header--fixed {
+    position: fixed;
+    background-color: white;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
 }
 
 header.header--transparent {
     background: transparent;
-    margin-bottom: -70px;
     z-index: 1;
-    position: relative;
+    position: absolute;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+header.header--scroll-down {
+    top: -70px;
+}
+
+header.header--scroll-up {
+    top: 0px;
+}
+
+header#header--transparent + section {
+    margin-top: -70px;
+    padding-top: 8.375rem;
 }
 
 header.header--transparent .logo svg,
