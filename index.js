@@ -6,31 +6,56 @@ let lastScrollTop = 0;
 const scrollInput = () => {
     const scrollPosition = window.scrollY;
 
-    if (scrollPosition > 100) {
+    // Adds 'fixed' and removes 'transparent class when user has scrolled further than 100px from top
+    if (scrollPosition > 70) {
         headerElement.classList.add('header--fixed');
-        headerElement.classList.remove('header--transparent')
+        headerElement.classList.remove('header--transparent');
+        console.log('Added fixed and removed transparent');
     }
 
+    // Adds 'transparent' class when user goes back to top of page
     if (scrollPosition == 0 && headerID == 'header--transparent') {
-        headerElement.classList.add('header--transparent')
+        headerElement.classList.add('header--transparent');
+        headerElement.classList.remove('header--fixed');
+        headerElement.classList.remove('header--scroll-up');
+        console.log('Added transparent');
     }
 
-    if (scrollPosition == headerElementHeight && headerID == 'header--transparent') {
-        headerElement.classList.add('header--transparent')
-    }
-
-    if (scrollPosition > lastScrollTop && scrollPosition > 70) {
-        // Scrolling down
+    // Checks 'scroll down' input
+    if (scrollPosition > lastScrollTop && scrollPosition > 150) {
         headerElement.classList.remove('header--scroll-up');
         headerElement.classList.add('header--scroll-down');
+        console.log('Scrolling down');
     } 
+
+    // Checks 'scroll up' input
     if (scrollPosition < lastScrollTop) {
-        // Scrolling up
         headerElement.classList.remove('header--scroll-down');
         headerElement.classList.add('header--scroll-up');
+        console.log('Scrolling up');
     }
+
+    console.log(scrollPosition)
 
     lastScrollTop = scrollPosition;
 }
 
 window.addEventListener('scroll', scrollInput);
+window.addEventListener("load", scrollInput);
+
+const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        func(...args);
+      }, delay);
+    };
+};
+  
+const debouncedScrollInput = debounce(scrollInput, 200); // Adjust the delay as needed
+
+window.addEventListener('scroll', debouncedScrollInput);
+window.addEventListener('load', debouncedScrollInput);
