@@ -3,6 +3,10 @@ const headerElementHeight = headerElement.offsetHeight;
 const headerID = headerElement.id;
 let lastScrollTop = 0;
 
+// Testing first child
+const firstSection = document.querySelector('section');
+console.log(firstSection)
+
 const scrollInput = () => {
     const scrollPosition = window.scrollY;
 

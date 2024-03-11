@@ -127,11 +127,14 @@ header {
 }
 
 header#header--fixed {
-    position: relative;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background: white;
 }
 
 header.header--fixed {
-    position: fixed;
+    position: fixed !important;
     background-color: white;
     z-index: 1;
     top: 0;
@@ -164,6 +167,10 @@ header.header--scroll-up {
 
 header#header--transparent + section {
     margin-top: -70px;
+    padding-top: 8.375rem;
+}
+
+header#header--fixed + section {
     padding-top: 8.375rem;
 }
 
