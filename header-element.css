@@ -143,9 +143,10 @@ header.header--fixed {
 
 header.header--transparent {
     background: transparent;
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     top: 0;
+    left: 0;
     transition: all 0.4s ease-in-out;
 }
 
@@ -205,6 +206,8 @@ header .header__controls {
 
 header .header__controls button {
     width: 30px;
+    background-color: unset;
+    padding: unset;
 }
 
 header .header__quick-nav {
