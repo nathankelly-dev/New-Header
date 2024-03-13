@@ -5,7 +5,6 @@ let lastScrollTop = 0;
 
 // Testing first child
 const firstSection = document.querySelector('section');
-console.log(firstSection)
 
 const scrollInput = () => {
     const scrollPosition = window.scrollY;
@@ -14,7 +13,6 @@ const scrollInput = () => {
     if (scrollPosition > 70) {
         headerElement.classList.add('header--fixed');
         headerElement.classList.remove('header--transparent');
-        console.log('Added fixed and removed transparent');
     }
 
     // Adds 'transparent' class when user goes back to top of page
@@ -22,24 +20,19 @@ const scrollInput = () => {
         headerElement.classList.add('header--transparent');
         headerElement.classList.remove('header--fixed');
         headerElement.classList.remove('header--scroll-up');
-        console.log('Added transparent');
     }
 
     // Checks 'scroll down' input
     if (scrollPosition > lastScrollTop && scrollPosition > 150) {
         headerElement.classList.remove('header--scroll-up');
         headerElement.classList.add('header--scroll-down');
-        console.log('Scrolling down');
     } 
 
     // Checks 'scroll up' input
     if (scrollPosition < lastScrollTop) {
         headerElement.classList.remove('header--scroll-down');
         headerElement.classList.add('header--scroll-up');
-        console.log('Scrolling up');
     }
-
-    console.log(scrollPosition)
 
     lastScrollTop = scrollPosition;
 }
